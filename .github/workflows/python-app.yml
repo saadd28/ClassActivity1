@@ -7,11 +7,7 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
-      - closed
+    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -20,7 +16,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
 
     steps:
     - uses: actions/checkout@v3
